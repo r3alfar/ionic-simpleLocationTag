@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>My Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid class="ion-margin-horizontal" *ngIf="userData">
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="7" size-sm="2">
+        <ion-row class="ion-align-items-end ion-justify-content-end">
+        <ion-fab-button color="primary" style="position: absolute; z-index: 1" (click)="presentUploadAction()">
+        <ion-icon name="camera"></ion-icon>
+        </ion-fab-button>
+        <input type="file" *ngIf="isDesktop" #filePicker (change)="onFileChoose($event)"/>
+        <ion-img src="assets/icon/avatar_male.png" style="object-fit: contain; width: 100%;" *ngIf="!photo"></ion-img>
+        <img id="profilePicture" src="{{photo}}" class="circle-image" *ngIf="photo" (load)="imageLoaded()">
+    </ion-row>
+    </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" size-sm="6" offset-sm="3">
+        <ion-text class="ion-text-center">
+          <h2 class="text-bold ion-no-margin ion-margin-top">{{ userData.name }}</h2>
+          <h4 class="ion-no-margin ion-padding-bottom">00000025885</h4>
+            <ion-col size="12">
+                <ion-button class="ion-margin-top" color="danger" expand="block" mode="ios" (click)="onLogout()"  >Logout</ion-button>
+            </ion-col>
+        </ion-text>
+
+        <div class="ion-padding ion-margin-top border-full">
+        <ion-card-title class="ion-margin-bottom text-bold" style="font-size: 1em">Check-In History</ion-card-title>
+        <div class="text-gray" *ngIf="!userData.locations" style="font-size:0.8em">Tidak terdapat history lokasi</div>
+        <div *ngIf="userData.locations">
+          <ion-item lines="none" class="border-item" style="font-size: 0.8em" *ngFor="let eachLocData of userData.locations; let i = index" (press)="onPress(i)">
+          <ion-label>
+            <span class="text-gray" style="font-size: 0.9em">{{ eachLocData.tanggal }}</span>
+            <div style="padding-top: 4px; font-size: 1.1em">{{ eachLocData.nama }}</div>
+        </ion-label>
+        </ion-item>
+        </div>
+        </div>
+        <ion-row class="ion-padding-top ion-justify-content-center">
+            <div class="ion-margin-top">
+                <ion-text>
+                    <span class="text-bold">Kesan</span>
+                    <div class="ion-padding" >
+                        Banyak yang dipelajadi dari kelas CP-Mobile ini, pembelajaran angular dengan framework ionic dimulai dari basic hingga penggunaan realtime database pada Firebase
+                    </div>
+                </ion-text>
+            </div>
+            <div class="ion-margin-top">
+                <ion-text>
+                    <span class="text-bold">Pesan</span>
+                    <div class="ion-padding" >
+                        Terima kasih aslab atas pembekalannya, Semoga dengan ini saya dapat meningkatkan kemampuan dalam dunia programming dalam menjenjang karir dalam bidang IT vice versa.
+                    </div>
+                </ion-text>
+            </div>
+    </ion-row>
+    </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

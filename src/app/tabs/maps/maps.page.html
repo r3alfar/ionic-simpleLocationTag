@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Maps</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-fab id="fabCurLoc" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="getCurrentLoc()" color="dark">
+      <ion-icon name="locate-outline" class="icon-get-location"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab id="fabOpenModal" vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button (click)="openModal()" color="danger">
+      <ion-icon name="pin-outline" class="icon-get-location"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-row id="transparentLayer" class="ion-hide max-width-height bg-layer" slot="fixed" (click)="hideModal()">
+  </ion-row>
+  <ion-row id="modalLayer" class="ion-hide ion-justify-content-center ion-align-items-center max-width-height" slot="fixed">
+  <ion-card style="z-index: 1000;">
+  <div class="ion-text-right" style="padding-right: 4px; padding-top: 4px;">
+  <ion-icon name="close-outline" style="font-size: 1.2em;" (click)="hideModal()"></ion-icon>
+  </div>
+  <div class="ion-padding-horizontal ion-padding-bottom">
+  <ion-item lines="none" class="border-full">
+    <ion-label position="floating">Nama Lokasi</ion-label>
+    <ion-input [(ngModel)]="locationValue" type="text"></ion-input>
+  </ion-item>
+  </div>
+  <div class="ion-padding-horizontal ion-padding-bottom">
+  <ion-button expand="block" shape="round" mode="ios" color="tertiary" (click)="checkIn()" [disabled]="locationValue == ''">
+  Check In
+  </ion-button>
+  </div>
+    </ion-card>
+    </ion-row>
+  <div #map id="map"></div>
+</ion-content>
+
