@@ -6,10 +6,10 @@
           <ion-title></ion-title>
           <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)" style="padding: 30px 30px 0px 30px">
             <ion-text style="margin: 0px">
-              <h2 style="font-weight: 600;">Sign In</h2>
+              <h2 style="font-weight: 600;">UAS 25885</h2>
             </ion-text>
             <ion-text style="color: #9d9fa6; font-size: 12px; margin-top: inherit" class="ion-no-margin">
-              <p>Please, sign in below</p>
+              <p>Sign In</p>
             </ion-text>
             <!-- Email Input -->
             <ion-item>
@@ -24,14 +24,14 @@
                          formControlName="password"
                          class="form-control"
                          required></ion-input>
-            </ion-item><ion-button class="ion-margin-top" type="submit" expand="block" color="primary" [disabled]="!loginForm.valid">Sign In</ion-button>
+            </ion-item><ion-button class="ion-margin-top" type="submit" expand="block" color="success" [disabled]="!loginForm.valid">Sign In</ion-button>
           </form>
             <ion-title color="medium" size="small" style="font-size: 11px; text-align: center; padding-top: 10px">Don't Have Account?
               <ion-label (click)="goToRegisterPage()" color="tertiary" style="font-size: 12px; font-weight: bold">Create an account</ion-label>
             </ion-title>
         </div>
-        <div class="ion-text-center ion-padding-top" style="width: 100%; padding-top: 50px">
-          <img class="" src="../../../assets/loginDisplay.svg" alt="icon" style="max-height: 150px; max-width: 150px;"/>
+        <div class="ion-text-center ion-padding-top" style="width: 100%; padding-top: 150px">
+          <img class="" src="../../../assets/loginDisplay.svg" alt="icon" style="max-height: 200px; max-width: 200px;"/>
         </div>
       </ion-col>
     </ion-row>
