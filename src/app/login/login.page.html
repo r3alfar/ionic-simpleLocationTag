@@ -9,7 +9,7 @@
               <h2 style="font-weight: 600;">Sign In</h2>
             </ion-text>
             <ion-text style="color: #9d9fa6; font-size: 12px; margin-top: inherit" class="ion-no-margin">
-              <p>Hello there, welcome back</p>
+              <p>Please, sign in below</p>
             </ion-text>
             <!-- Email Input -->
             <ion-item>
@@ -24,7 +24,7 @@
                          formControlName="password"
                          class="form-control"
                          required></ion-input>
-            </ion-item><ion-button class="ion-margin-top" type="submit" expand="block" color="tertiary" [disabled]="!loginForm.valid">Sign In</ion-button>
+            </ion-item><ion-button class="ion-margin-top" type="submit" expand="block" color="primary-tint" [disabled]="!loginForm.valid">Sign In</ion-button>
           </form>
             <ion-title color="medium" size="small" style="font-size: 11px; text-align: center; padding-top: 10px">Don't Have Account?
               <ion-label (click)="goToRegisterPage()" color="tertiary" style="font-size: 12px; font-weight: bold">Create an account</ion-label>

@@ -109,7 +109,7 @@ export class TabsPage {
           const newLocation: any = {
             lat: lat,
             lng: lng,
-            nama: 'Automatic Location Pinpoint',
+            nama: 'Last Seen (Automated)',
             tanggal: todayDate
           };
           this.userLocations.push(newLocation);
